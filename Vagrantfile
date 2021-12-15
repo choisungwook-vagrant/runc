@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       v.memory = CONFIG['server']['memory']
       v.cpus = CONFIG['server']['cpu']
       v.name = CONFIG['server']['name']
-    end
+    endech
 
     # ssh 비밀번호인증 활성화
     cfg.vm.provision "shell", inline: <<-SCRIPT
@@ -24,8 +24,7 @@ Vagrant.configure("2") do |config|
     
     cfg.vm.provision "shell", inline: <<-SCRIPT
       apt-get update
-      apt-get install -y vim net-tools golang-go build-essential make libseccomp-dev git
-      git clone https://github.com/opencontainers/runc      
+      apt-get install -y vim net-tools golang-go build-essential make libseccomp-dev git runc
     SCRIPT
   end
 end
