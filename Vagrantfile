@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       v.memory = CONFIG['server']['memory']
       v.cpus = CONFIG['server']['cpu']
       v.name = CONFIG['server']['name']
-    endech
+    end
 
     # ssh 비밀번호인증 활성화
     cfg.vm.provision "shell", inline: <<-SCRIPT
